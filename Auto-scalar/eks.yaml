@@ -11,7 +11,7 @@ managedNodeGroups:
 - name: managed-nodes
   labels:
     role: managed-nodes
-  instanceType: t2.micro
+  instanceType: t2.small
   minSize: 1
   maxSize: 10
   desiredCapacity: 1
