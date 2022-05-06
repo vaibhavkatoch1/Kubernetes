@@ -1,0 +1,5 @@
+service:
+  Service_name: wordpress-mysql
+  app: wordpress
+  port: 3306
+  tier: mysql

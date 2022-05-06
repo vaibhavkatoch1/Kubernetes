@@ -1,0 +1,6 @@
+service:
+  name: wordpress
+  app: wordpress
+  port: 80
+  tier: frontend
+  service_type: LoadBalancer
