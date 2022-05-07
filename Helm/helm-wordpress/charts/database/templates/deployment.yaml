@@ -18,8 +18,8 @@ spec:
         tier: {{ .Values.service.tier }}
     spec:
       containers:
-      - image: mysql:5.6
-        name: mysql
+      - image: {{.Values.containers.image}}
+        name: {{.Values.containers.name}}
         env:
         - name: MYSQL_ROOT_PASSWORD
           valueFrom:
@@ -27,12 +27,12 @@ spec:
               name: mysql-pass
               key: password
         ports:
-        - containerPort: 3306
-          name: mysql
+        - containerPort: {{.Values.containers.port}}
+          name: {{.Values.containers.name}}
         volumeMounts:
         - name: mysql-persistent-storage
           mountPath: /var/lib/mysql
       volumes:
       - name: mysql-persistent-storage
         persistentVolumeClaim:
-          claimName: mysql-pv-claim
+          claimName: {{.Values.PersistentVolumeClaim.claimName}}

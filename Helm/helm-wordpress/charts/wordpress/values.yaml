@@ -4,3 +4,17 @@ service:
   port: 80
   tier: frontend
   service_type: LoadBalancer
+
+global:
+    PersistentVolumeClaim:
+      name: wp-pv-claim
+      app: wordpress
+      accessModes: ReadWriteOnce
+      storage: 20Gi
+
+Deployment:
+    name: wordpress
+    app: wordpress
+    tier: frontend
+    container_image: wordpress:4.8-apache
+    conatiner_port: 80
