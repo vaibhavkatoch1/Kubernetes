@@ -13,5 +13,4 @@ nodeGroups:
     maxSize: 10
     volumeSize: 5
     ssh:
-      allow: true # will use ~/.ssh/id_rsa.pub as the default ssh key
       publicKeyPath: ~/.ssh/id_rsa.pub
